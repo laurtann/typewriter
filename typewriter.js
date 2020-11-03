@@ -1,19 +1,9 @@
-let sentence = "That's what she said";
+const sentence = "That's what she said";
+let timer = 0;
 
-// add new line
-sentence += "\n";
-
-// // this holds numbers equal to sentence.length - 1
-let iArr = [];
-
-for (let i = 0; i < sentence.length; i++) {
-  iArr.push(i);
+for (const char of sentence) {
+  setTimeout(() => process.stdout.write(char), timer);
+  timer += 50;
 }
 
-for (let i = 0; i < sentence.length; i++) {
-  setTimeout(() => process.stdout.write(sentence[i]), iArr[i] * 50);
-}
-
-
-
-
+setTimeout(() => console.log("\n"), timer);
